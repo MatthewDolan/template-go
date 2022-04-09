@@ -1,0 +1,58 @@
+# output configuration options
+output:
+  # sorts results by: filepath, line, and column
+  sort-results: true
+
+linters:
+  enable-all: true
+  disable:
+    - exhaustivestruct
+    - funlen
+    - godox
+    - golint # The linter 'golint' is deprecated (since v1.41.0) due to: The repository of the linter has been archived by the owner.  Replaced by revive.
+    - interfacer # The linter 'interfacer' is deprecated (since v1.38.0) due to: The repository of the linter has been archived by the owner.
+    - ireturn
+    - maligned # The linter 'maligned' is deprecated (since v1.38.0) due to: The repository of the linter has been archived by the owner.  Replaced by govet 'fieldalignment'.
+    - paralleltest
+    - scopelint # The linter 'scopelint' is deprecated (since v1.39.0) due to: The repository of the linter has been deprecated by the owner.  Replaced by exportloopref.
+    - wrapcheck
+    - wsl
+
+linters-settings:
+  gci:
+    local-prefixes: github.com/MatthewDolan
+
+  goimports:
+    local-prefixes: github.com/MatthewDolan
+
+  revive:
+    rules:
+      - name: if-return
+        disabled: true
+
+  wrapcheck:
+    # An array of strings which specify substrings of signatures to ignore. If this
+    # set, it will override the default set of ignored signatures. You can find the
+    # default set at the top of ./wrapcheck/wrapcheck.go.
+    ignoreSigs:
+      - .Errorf(
+      - errors.New(
+      - errors.Unwrap(
+      - .Wrap(
+      - .Wrapf(
+      - .WithMessage(
+      - .WithMessagef(
+      - .WithStack(
+
+    # An array of glob patterns which, if any match the package of the function
+    # returning the error, will skip wrapcheck analysis for this error. This is
+    # useful for broadly ignoring packages and/or subpackages from wrapcheck
+    # analysis. There are no defaults for this value.
+    ignorePackageGlobs:
+      - encoding/*
+      - github.com/pkg/*
+
+  wsl:
+    force-err-cuddling: true
+    force-case-trailing-whitespace: 1
+  

@@ -20,3 +20,14 @@ fmt: generate
 .PHONY: build
 build: generate
 	@go install ./...
+
+.PHONY: upgrade
+upgrade: upgrade-go upgrade-hermit
+
+.PHONY: upgrade-go
+upgrade-go:
+	@go get -t -u ./...
+
+.PHONY: upgrade-hermit
+upgrade-hermito:
+	@go get -t -u ./...

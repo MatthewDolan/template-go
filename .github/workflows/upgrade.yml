@@ -13,9 +13,12 @@ jobs:
       - name: init hermit
         run: ./bin/hermit env --raw >> $GITHUB_ENV
 
-      - name: upgrade dependencies
-        run: make upgrade
-  
+      - name: upgrade hermit dependencies
+        run: hermit upgrade
+
+      - name: upgrade go dependencies
+        run: go get -t -u ./...
+
       - name: create pull request
         uses: peter-evans/create-pull-request@v4
         with:

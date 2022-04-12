@@ -16,7 +16,7 @@ jobs:
       run: ./bin/hermit env --raw >> $GITHUB_ENV
 
     - name: lint
-      run: make lint
+      run: golangci-lint run --fix ./...
 
   test:
     runs-on: ubuntu-latest
@@ -27,4 +27,4 @@ jobs:
       run: ./bin/hermit env --raw >> $GITHUB_ENV
 
     - name: test
-      run: make test
+      run: gotestsum ./... -- -race

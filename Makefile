@@ -1,33 +1,22 @@
+include go.mk hermit.mk
+
 .PHONY: default
 default: lint test build
 
 .PHONY: generate
-generate:
-	@go generate ./...
+generate: generate-go
 
 .PHONY: test
-test: generate
-	@gotestsum ./... -- -race
+test: test-go
 
 .PHONY: lint
-lint: generate
-	@golangci-lint run ./...
+lint: lint-go
 
 .PHONY: fmt
-fmt: generate
-	@golangci-lint run --fix ./...
+fmt: fmt-go
 
 .PHONY: build
-build: generate
-	@go install ./...
+build: build-go
 
 .PHONY: upgrade
 upgrade: upgrade-go upgrade-hermit
-
-.PHONY: upgrade-go
-upgrade-go:
-	@go get -t -u ./...
-
-.PHONY: upgrade-hermit
-upgrade-hermito:
-	@go get -t -u ./...

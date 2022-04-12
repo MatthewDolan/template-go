@@ -12,6 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: init hermit
+      run: ./bin/hermit env --raw >> $GITHUB_ENV
+
     - name: lint
       run: make lint
 
@@ -19,6 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
+    - name: init hermit
+      run: ./bin/hermit env --raw >> $GITHUB_ENV
 
     - name: test
       run: make test

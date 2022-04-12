@@ -33,10 +33,6 @@ linters-settings:
     sections:
       - standard # Captures all standard packages if they do not match another section.
       - default # Contains all imports that could not be matched to another section type.
-      - prefix(github.com/MatthewDolan) # Groups all imports with the specified prefix.
-
-  goimports:
-    local-prefixes: github.com/MatthewDolan
 
   revive:
     rules:

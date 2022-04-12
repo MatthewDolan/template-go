@@ -1,0 +1,8 @@
+.git/
+.gitignore
+.github/
+.hermit/
+Makefile
+*.mk
+LICENSE
+Dockerfile

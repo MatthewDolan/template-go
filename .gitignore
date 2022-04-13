@@ -16,3 +16,6 @@
 
 # By default, hermit uses the following directory for things like $GOBIN => .hermit/go/bin
 /.hermit/
+
+# goreleaser automatically added this to .gitignore
+dist/

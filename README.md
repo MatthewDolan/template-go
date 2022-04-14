@@ -1,4 +1,4 @@
-# go-template
+# template-go
 A minimalist template for a Go repository.
 
 The goal is to minimize the assumed to dependencies to almost nothing (it should be able to run as-is on Linux and Mac).

@@ -1,3 +1,3 @@
 .PHONY: upgrade-hermit
 upgrade-hermit:
-	@hermit upgrade
+	@bin/hermit upgrade

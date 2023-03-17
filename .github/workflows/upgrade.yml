@@ -11,6 +11,7 @@ on:
 jobs:
   upgrade-dep:
     runs-on: ubuntu-latest
+    environment: upgrade action
     steps:
       - uses: actions/checkout@v3
 

@@ -3,6 +3,8 @@ name: Upgrade Dependencies
 on:
   schedule:
     - cron:  '0 10 * * 1'
+  push:
+    branches: [main]
 
 jobs:
   upgrade-dep:

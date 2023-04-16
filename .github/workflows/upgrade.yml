@@ -26,8 +26,8 @@ jobs:
         id: create-pull-request
         uses: peter-evans/create-pull-request@v4
         with:
-            commit-message: Upgrade dependencies
-            title: Upgrade dependencies
+            commit-message: "chore: ↗️ update dependencies"
+            title: "chore: ↗️ update dependencies"
             body: |
               - Upgrade hermit and go dependencies
   

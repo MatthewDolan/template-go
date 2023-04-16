@@ -5,7 +5,7 @@ generate-go:
 
 .PHONY: test-go
 test-go: generate-go
-	@bin/gotestsum ./... -- -race
+	@bin/gotestsum --format-hide-empty-pkg -- ./... -race
 
 .PHONY: lint-go
 lint-go: generate-go
